@@ -4,13 +4,14 @@ import zipfile
 import logging
 from pathlib import Path
 
-# --- Using standard LlamaIndex classes (Stable and resolves dependency issues) ---
-
-# Final, corrected import structure:
+# --- Final, Clean Import Structure (Avoids Ambiguity) ---
+from llama_index.core.settings import Settings 
 from llama_index.core.storage.storage_context import StorageContext
-from llama_index.core.settings import Settings # Settings is defined here!
-from llama_index.indices.knowledge_graph import KnowledgeGraphIndex 
-# ... (rest of the imports) ...from llama_index.llms.google_genai import GoogleGenAI
+from llama_index.core.service_context import ServiceContext
+
+# These imports are correct and should be kept simple:
+from llama_index.indices.knowledge_graph import KnowledgeGraphIndex
+from llama_index.llms.google_genai import GoogleGenAI
 from llama_index.embeddings.huggingface import HuggingFaceEmbedding
 # ---------------------------------------------------------------------------------
 
