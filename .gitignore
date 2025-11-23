@@ -1,0 +1,14 @@
+# Virtual Environment
+venv/
+athero_env/
+
+# Python artifacts
+__pycache__/
+*.pyc
+
+# Streamlit/LlamaIndex Cache
+.streamlit/
+.ipynb_checkpoints/
+
+# Storage files (optional, as you commit the zip, but good practice)
+HippoRAG/storage/
