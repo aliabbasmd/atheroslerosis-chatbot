@@ -6,6 +6,7 @@ pandas
 numpy
 
 # LLM and Embedding Connectors
+llama-index # <--- ADD THIS LINE!
 llama-index-llms-google-genai
 llama-index-embeddings-huggingface
 sentence-transformers
