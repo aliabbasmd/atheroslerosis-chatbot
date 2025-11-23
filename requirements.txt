@@ -5,6 +5,7 @@ pypdf
 zipfile
 pandas
 numpy
+streamlit-extras
 
 # LLM and Embedding Connectors
 llama-index-llms-google-genai
@@ -13,5 +14,6 @@ sentence-transformers
 openai
 pydantic
 
-# CORE FRAMEWORK (Using git URL)
-git+https://github.com/OSU-NLP-Group/HippoRAG.git#egg=hipporag
+# LOCAL SOURCE CODE INSTALLATION
+# Install HippoRAG source code from the committed folder
+-e ./HippoRAG
