@@ -5,7 +5,7 @@ import logging
 from pathlib import Path
 
 # --- Using standard LlamaIndex classes (Stable and resolves dependency issues) ---
-from llama_index.core import ServiceContext, StorageContext, Settings
+from llama_index.core import StorageContext, Settings
 from llama_index.indices.knowledge_graph import KnowledgeGraphIndex
 from llama_index.llms.google_genai import GoogleGenAI
 from llama_index.embeddings.huggingface import HuggingFaceEmbedding
@@ -45,8 +45,27 @@ def setup_rag_engine():
 
     Settings.llm = llm
     Settings.embed_model = embed_model
-    service_context = ServiceContext.from_defaults(llm=llm, embed_model=embed_model)
+    #service_context = ServiceContext.from_defaults(llm=llm, embed_model=embed_model)
+# Find and delete this old line:
+    # service_context = ServiceContext.from_defaults(llm=llm, embed_model=embed_model)
 
+    # The new logic relies on Settings being configured globally before loading the index:
+    # (Ensure the Settings object is fully configured with your LLM/Embed models)
+    Settings.llm = llm
+    Settings.embed_model = embed_model
+    
+    # Load the Knowledge Graph using the global Settings implicitly
+    try:
+        storage_context = StorageContext.from_defaults(persist_dir=str(FINAL_KG_PATH))
+        # ... (rest of the loading logic) ...
+        
+        # When calling from_client_and_storage, do NOT pass ServiceContext/Settings
+        # as a direct argument unless required.
+        kg_index = KnowledgeGraphIndex.from_client_and_storage(
+            storage_context=storage_context,
+            # DO NOT PASS SERVICE_CONTEXT HERE
+        )
+        return kg_index.as_query_engine(...)
     # 4. Load the Knowledge Graph Index
     try:
         storage_context = StorageContext.from_defaults(persist_dir=str(FINAL_KG_PATH))
