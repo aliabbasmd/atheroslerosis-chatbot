@@ -2,10 +2,8 @@
 streamlit
 requests
 pypdf
-zipfile
 pandas
 numpy
-streamlit-extras
 
 # LLM and Embedding Connectors
 llama-index-llms-google-genai
@@ -13,7 +11,3 @@ llama-index-embeddings-huggingface
 sentence-transformers
 openai
 pydantic
-
-# LOCAL SOURCE CODE INSTALLATION
-# Install HippoRAG source code from the committed folder
--e ./HippoRAG
