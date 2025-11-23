@@ -5,8 +5,8 @@ import logging
 from pathlib import Path
 
 # --- Using standard LlamaIndex classes (Stable and resolves dependency issues) ---
-from llama_index.core import StorageContext, Settings, SimpleDirectoryReader
-from llama_index.indices.knowledge_graph import KnowledgeGraphIndex
+from llama_index.core import Settings # Keep Settings
+from llama_index.core.storage.storage_context import StorageContext # New, correct importfrom llama_index.indices.knowledge_graph import KnowledgeGraphIndex
 from llama_index.llms.google_genai import GoogleGenAI
 from llama_index.embeddings.huggingface import HuggingFaceEmbedding
 # ---------------------------------------------------------------------------------
