@@ -10,11 +10,8 @@ numpy
 llama-index-llms-google-genai
 llama-index-embeddings-huggingface
 sentence-transformers
+openai
+pydantic
 
-# CORE FRAMEWORK (Using git URL to install the source code)
+# CORE FRAMEWORK (Using git URL)
 git+https://github.com/OSU-NLP-Group/HippoRAG.git#egg=hipporag
-
-# --- Conflict Resolution ---
-# Loosen the version requirements for the most problematic packages
-openai>=1.109.1
-pydantic>=2.12.4
