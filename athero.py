@@ -9,8 +9,12 @@ from llama_index.llms.google_genai import GoogleGenAI
 from llama_index.core import ServiceContext, StorageContext, Settings
 from llama_index.indices.knowledge_graph import KnowledgeGraphIndex
 from llama_index.embeddings.huggingface import HuggingFaceEmbedding
-# Note: You must commit the hipporag source folder or install it in requirements.txt
-# import hipporag 
+
+# --- ADD THIS LINE AFTER ALL IMPORTS ---
+import sys
+# Manually add the committed HippoRAG source directory to the Python path
+sys.path.append(os.path.join(os.path.dirname(__file__), 'HippoRAG', 'src'))
+# ---------------------------------------
 
 # --- Configuration & Setup ---
 
