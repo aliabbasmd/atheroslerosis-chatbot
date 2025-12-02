@@ -1,0 +1,14 @@
+# CORE STREAMLIT AND DATA HANDLING
+streamlit
+requests
+pypdf
+pandas
+numpy
+
+# LLM and Embedding Connectors
+llama-index-core # <--- ADD THIS LINE!
+llama-index-llms-google-genai
+llama-index-embeddings-huggingface
+sentence-transformers
+openai
+pydantic

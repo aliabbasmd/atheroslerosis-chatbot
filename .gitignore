@@ -1,0 +1,20 @@
+# --- DATA & SECRETS (Must Ignore) ---
+*.pdf
+*.json
+*.csv
+athero_data/
+chroma_graph_db/
+chroma_doc_db/
+extracted_facts/
+HippoRAG/storage/
+
+# --- PYTHON & ENV ---
+__pycache__/
+*.pyc
+miniconda3/
+venv/
+athero_env/
+.ipynb_checkpoints/
+
+# --- APP CACHE ---
+.streamlit/
